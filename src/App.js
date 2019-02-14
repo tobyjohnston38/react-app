@@ -3,15 +3,35 @@ import './App.css';
 import Person from './Person/Person'
 
 class App extends Component {
+  state = {
+    persons: [
+      { name: 'Max', age: 28 },
+      { name: 'Manu', age: 29 },
+      { name: 'Stephanie', age: 26 }
+    ],
+    otherState: 'some other value'
+  }
+
+  switchNameHandler = () => {
+    // console.log('this was clicked')
+    // DONT DO THIS this.state.persons[0].name = 'Maxy Max';
+    this.setState({persons: [
+      { name: 'Maxy Max', age: 29 },
+      { name: 'Manu Panu Po Fanu', age: 29.5 },
+      { name: 'Stephanie Wephanie', age: 27 }
+      ] 
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>This is a React app!</h1>
         <p>thing</p>
-        <button>Switch Name</button>
-        <Person name="Max" age="28" />
-        <Person name="Manu" age="29" >My Hobbies</Person>
-        <Person name="Stephanie" age="26" />
+        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}> My Hobbies: Racing</Person>
+        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
       </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'this should work'))
