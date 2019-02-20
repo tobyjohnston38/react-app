@@ -37,18 +37,18 @@ const app = props => {
         age={personsState.persons[0].age}
       />
       <Person
+        name={personsState.persons[1].name}
+        age={personsState.persons[1].age}
+        click={switchNameHandler}>
+        My Hobbies: Racing
+      </Person>
+      <Person
         name={personsState.persons[2].name}
         age={personsState.persons[2].age}
       />
-      <Person
-        name={personsState.persons[1].name}
-        age={personsState.persons[1].age}>
-        {" "}
-        My Hobbies: Racing
-      </Person>
     </div>
   )
-  // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'this should work'))
 }
+// return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'this should work'))
 
 export default app
