@@ -1,29 +1,16 @@
-import React, { useState } from "react"
+import React, { Component } from "react"
 import "./App.css"
 import Person from "./Person/Person"
 
 class App extends Component {
   state = {
     persons: [
-      { name: newName, age: 28 },
+      { name: 'Max', age: 28 },
       { name: "Manu", age: 29 },
       { name: "Stephanie", age: 26 }
       ],
           otherState: "some other value"
     }
-
-// const app = props, newName => {
-//   const [personsState, setPersonsState] = useState({
-//     persons: [
-//       { name: newName, age: 28 },
-//       { name: "Manu", age: 29 },
-//       { name: "Stephanie", age: 26 }
-//     ]
-//     otherState "some other value"
-//   })
-
-
-  console.log(personsState, otherState)
 
   switchNameHandler = (newName) => {
     // console.log('this was clicked')
@@ -34,6 +21,16 @@ class App extends Component {
         { name: "Manu Panu Po Fanu", age: 29.5 },
         { name: "Stephanie Wephanie", age: 27 }
       ]
+    })
+  }
+
+  nameChangedHandler = (event) => {
+    this.setState( {
+      persons: [
+        { name: 'Max', age: 28 },
+        { name: event.target.value, age: 29 },
+        { name: "Stephanie", age: 26 }
+        ]
     })
   }
 
@@ -64,4 +61,4 @@ class App extends Component {
   }
 // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'this should work'))
 }
-export default app
+export default App
