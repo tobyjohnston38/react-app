@@ -1,7 +1,5 @@
 import React, { Component } from "react"
 import Aux from "../../../hoc/Aux"
-// import classes from "./Person.css"
-
 class Person extends Component {
   render() {
     console.log("[Person.js] rendering...")
