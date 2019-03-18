@@ -6,7 +6,8 @@ import Aux from "../../../hoc/Aux"
 import withClass from "../../../hoc/withClass"
 import classes from "./Person.css"
 class Person extends Component {
-  constructor() {
+  constructor(props) {
+    super(props)
     this.inputElementRef = React.createRef()
   }
 
